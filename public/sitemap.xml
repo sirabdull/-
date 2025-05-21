@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+    <url>
+    <loc>http://127.0.0.1:8000/</loc>
+            </url>
+    <url>
+    <loc>http://127.0.0.1:8000/properties</loc>
+            </url>
+    <url>
+    <loc>http://127.0.0.1:8000/about</loc>
+            </url>
+    <url>
+    <loc>http://127.0.0.1:8000/contact</loc>
+            </url>
+    <url>
+    <loc>http://127.0.0.1:8000/properties/modern-hexagon-building-682917864a817</loc>
+            </url>
+    <url>
+    <loc>http://127.0.0.1:8000/properties/fullly-detached-duples-6829ade91233d</loc>
+            </url>
+    <url>
+    <loc>http://127.0.0.1:8000/properties/fully-detatched-duplex-6828fc52c55d9</loc>
+            </url>
+    <url>
+    <loc>http://127.0.0.1:8000/properties/fully-detatched-duplex-682d1673464f3</loc>
+            </url>
+    <url>
+    <loc>http://127.0.0.1:8000/properties/fully-detatched-duplex-68291d45a4b05</loc>
+            </url>
+    <url>
+    <loc>http://127.0.0.1:8000</loc>
+            </url>
+</urlset>
