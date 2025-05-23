@@ -226,7 +226,7 @@ new class extends Component {
                                 class="flex-1 bg-[#FFF114] hover:bg-yellow-300 text-black px-6 py-2 rounded text-center transition duration-300">
                                 View Details
                             </a>
-                            <a href="/properties/{{ $property->slug }}/enquiry"
+                            <a href="/properties/{{ $property->slug }}"
                                 class="flex-1 bg-black hover:bg-gray-800 text-white px-6 py-2 rounded text-center transition duration-300">
                                 Make Enquiry
                             </a>

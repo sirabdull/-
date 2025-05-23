@@ -14,4 +14,10 @@ class Location extends Model
         'custom' => 'array'
 
     ];
+
+
+    public function properties()
+    {
+        return $this->hasMany(Property::class);
+    }
 }

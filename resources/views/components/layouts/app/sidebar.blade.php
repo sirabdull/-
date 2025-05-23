@@ -23,6 +23,10 @@
                     wire:navigate>
                     {{ __('Properties') }}
                 </flux:navlist.item>
+                <flux:navlist.item icon="map-pin" :href="route('locations')" :current="request()->routeIs('locations')"
+                    :current="request()->routeIs('locations')" wire:navigate>
+                    {{ __('Locations') }}
+                </flux:navlist.item>
                 <flux:navlist.item icon="computer-desktop" :href="route('web.conf')"
                     :current="request()->routeIs('web.conf')" wire:navigate>{{ __('configuration') }}
                 </flux:navlist.item>
@@ -49,9 +53,8 @@
                 {{ __('File Manager') }}
             </flux:navlist.item>
 
-            <flux:navlist.item icon="book-open-text" href="https://laravel.com/docs/starter-kits#livewire"
-                target="_blank">
-                {{ __('Documentation') }}
+            <flux:navlist.item icon="book-open-text" href="/" target="_blank">
+                {{ __('Website') }}
             </flux:navlist.item>
         </flux:navlist>
 

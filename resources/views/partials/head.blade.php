@@ -14,5 +14,9 @@
     [x-clock] {
         display: none
     }
+
+    button {
+        cursor: pointer;
+    }
 </style>
 @fluxAppearance

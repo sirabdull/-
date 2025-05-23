@@ -25,6 +25,7 @@ new class extends Component {
         $newFeature = '',
         $newFeatureValue = '';
 
+
     public $mode = 'create';
     public $property = null;
 
@@ -235,7 +236,7 @@ new class extends Component {
 
             <div class="space-y-4">
                 <div class="flex items-center justify-between pt-2 cursor-pointer hover:bg-gray-100"
-                    @click="featuresOpen = !featuresOpen>
+                    @click="featuresOpen = !featuresOpen">
                     <h3 class="text-lg font-medium
                     text-gray-900">Property Features</h3>
                     <a type="button" @click="featuresOpen = !featuresOpen" class="text-gray-500 hover:text-gray-700">
@@ -396,9 +397,14 @@ new class extends Component {
                 <div class="flex justify-between items-center">
                     <h3 class="text-lg font-medium leading-6 text-gray-900">Location</h3>
                 </div>
-                <livewire:admin.locations.create-modal />
+
+        <flux:button  @click="$wire.dispatch('open-location-modal', { mode: 'create' })">
+            Add New Location
+        </flux:button>
+
+            <livewire:admin.locations.create-modal />
             </div>
-            <div class="mt-4">
+            <div  class="mt-4 @open-location-modal.window="alert('open')">
                 <flux:select wire:model="selected_location" required tabindex="0" id="selected_location">
                     <option value="">Select Location</option>
                     @foreach (Location::select('id', 'name', 'title')->get() as $loc)

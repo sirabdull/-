@@ -103,8 +103,7 @@ new class extends Component {
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
-            <flux:input wire:model.live="search" size="sm" placeholder="Search..." icon="magnifying-glass"
-                kbd="⌘K" />
+            <flux:input wire:model.live="search" size="sm" placeholder="Search..." icon="magnifying-glass" kbd="⌘K" />
             <flux:select size="sm" wire:model.live="filters.type" placeholder="Select type">
                 <flux:select.option value="">All Types</flux:select.option>
                 <flux:select.option value="house">House</flux:select.option>
@@ -128,10 +127,8 @@ new class extends Component {
             </flux:button>
             <div x-show="advanced" class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
                 <div class="flex space-x-2">
-                    <flux:input wire:model.live="filters.price_min" type="number" placeholder="Min Price"
-                        size="sm" />
-                    <flux:input wire:model.live="filters.price_max" type="number" placeholder="Max Price"
-                        size="sm" />
+                    <flux:input wire:model.live="filters.price_min" type="number" placeholder="Min Price" size="sm" />
+                    <flux:input wire:model.live="filters.price_max" type="number" placeholder="Max Price" size="sm" />
                 </div>
                 <flux:input wire:model.live="filters.bedrooms" type="number" placeholder="Bedrooms" size="sm" />
                 <flux:input wire:model.live="filters.bathrooms" type="number" placeholder="Bathrooms" size="sm" />

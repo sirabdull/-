@@ -19,14 +19,14 @@ new class extends Component {
     public function submitEnquiry()
     {
         try {
-            $this->validate([
+            $validatedData = $this->validate([
                 'name' => 'required|min:3',
                 'email' => 'required|email',
                 'phone' => 'required',
                 'message' => 'required|min:10',
             ]);
 
-            \App\Models\Inquiry::create([
+            $response = \Illuminate\Support\Facades\Http::post(route('property.enquiry.submit'), [
                 'property_id' => $this->property->id,
                 'name' => $this->name,
                 'email' => $this->email,
@@ -34,16 +34,12 @@ new class extends Component {
                 'message' => $this->message,
             ]);
 
-            Mail::to(env('CONTACT_EMAIL'))->send(new \App\Mail\PropertyEnquiry(
-                property: $this->property,
-                name: $this->name,
-                email: $this->email,
-                phone: $this->phone,
-                message: $this->message,
-            ));
-
-            $this->reset(['name', 'email', 'phone', 'message']);
-            LivewireAlert::title('Enquiry Sent')->text('Your enquiry has been sent successfully. We will get back to you shortly.')->toast()->position('top-end')->success();
+            if ($response->successful()) {
+                $this->reset(['name', 'email', 'phone', 'message']);
+                LivewireAlert::title('Enquiry Sent')->text('Your enquiry has been sent successfully. We will get back to you shortly.')->toast()->position('top-end')->success();
+            } else {
+                throw new \Exception('Failed to submit enquiry');
+            }
         } catch (\Exception $e) {
             LivewireAlert::title('Error')->text('An error occurred while sending your enquiry. Please try again.')->toast()->position('top-end')->error();
         }
